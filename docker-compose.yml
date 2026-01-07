@@ -62,7 +62,7 @@ services:
       - ${OC_APPS_DIR:-./config/opencloud/apps}:/var/lib/opencloud/web/assets/apps
     logging:
       driver: ${LOG_DRIVER:-local}
-    restart: no
+    restart: unless-stopped
 
 
 networks:
