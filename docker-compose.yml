@@ -63,6 +63,8 @@ services:
     logging:
       driver: ${LOG_DRIVER:-local}
     restart: unless-stopped
+    mem_limit: 1500m
+    memswap_limit: 1500m
 
 
 networks:
