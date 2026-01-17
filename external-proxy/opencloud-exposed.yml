@@ -7,4 +7,4 @@ services:
         PROXY_HTTP_ADDR: "0.0.0.0:9200"
       ports:
         # expose the opencloud server on all interfaces
-        - "0.0.0.0:9200:9200"
+        - "0.0.0.0:7009:9200"
