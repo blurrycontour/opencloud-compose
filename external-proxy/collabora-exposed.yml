@@ -1,4 +1,8 @@
 ---
+x-labels: &x-labels
+  - sablier.enable=true
+  - sablier.group=${COMPOSE_PROJECT_NAME}
+
 # only expose the ports when you know what you are doing!
 services:
   collaboration:
@@ -9,3 +13,4 @@ services:
     ports:
       # expose the collabora server on all interfaces
       - "0.0.0.0:7008:9980"
+    labels: *x-labels

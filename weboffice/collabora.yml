@@ -21,8 +21,8 @@ services:
     depends_on:
       opencloud:
         condition: service_started
-      collabora:
-        condition: service_healthy
+      # collabora:
+      #   condition: service_healthy
     entrypoint:
       - /bin/sh
     command: [ "-c", "opencloud collaboration server" ]
@@ -45,7 +45,7 @@ services:
       - ${OC_CONFIG_DIR:-opencloud-config}:/etc/opencloud
     logging:
       driver: ${LOG_DRIVER:-local}
-    restart: always
+    restart: unless-stopped
 
   collabora:
     image: collabora/code:25.04.7.1.1
@@ -74,7 +74,7 @@ services:
       - /usr/share/fonts/truetype:/opt/cool/systemplate/usr/share/fonts/truetype/more:ro
     logging:
       driver: ${LOG_DRIVER:-local}
-    restart: always
+    restart: unless-stopped
     entrypoint: [ '/bin/bash', '-c' ]
     command: [ 'coolconfig generate-proof-key && /start-collabora-online.sh' ]
     healthcheck:
