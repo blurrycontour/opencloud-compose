@@ -34,3 +34,13 @@ services:
       # 7. Recreate opencloud container: `docker compose up -d opencloud`
       PROXY_ROLE_ASSIGNMENT_DRIVER: "default"
       GRAPH_ASSIGN_DEFAULT_USER_ROLE: "true"
+
+      # OIDC configuration for using Authelia as an external identity provider
+      OC_OIDC_ISSUER: ${OC_OIDC_ISSUER}
+      OC_EXCLUDE_RUN_SERVICES: idp
+      PROXY_OIDC_REWRITE_WELLKNOWN: true
+      PROXY_USER_OIDC_CLAIM: ${PROXY_USER_OIDC_CLAIM:-email}
+      PROXY_USER_CS3_CLAIM: ${PROXY_USER_CS3_CLAIM:-mail}
+      PROXY_AUTOPROVISION_ACCOUNTS: true
+      GRAPH_USERNAME_MATCH: none
+      PROXY_CSP_CONFIG_FILE_OVERRIDE_LOCATION: /etc/opencloud/csp-override.yaml
