@@ -11,11 +11,12 @@ import requests
 
 extensions = [
     "calculator",
-    # "draw-io",
-    # "json-viewer",
-    # "maps",
-    # "pastebin",
-    # "unzip",
+    "progress-bars",
+    "draw-io",
+    "json-viewer",
+    "maps",
+    "pastebin",
+    "unzip",
 ]
 feed_url = "https://github.com/opencloud-eu/web-extensions/releases.atom"
 
