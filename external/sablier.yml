@@ -11,6 +11,12 @@ services:
   # main
   opencloud:
     labels: *x-labels-1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/.well-known/openid-configuration"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
   radicale:
     labels: *x-labels-1
   tika:
