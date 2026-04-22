@@ -1,16 +1,22 @@
 ---
-x-labels: &x-labels
+x-labels-1: &x-labels-1
   - sablier.enable=true
-  - sablier.group=${COMPOSE_PROJECT_NAME}
+  - sablier.group=opencloud-main
+
+x-labels-2: &x-labels-2
+  - sablier.enable=true
+  - sablier.group=opencloud-aux
 
 services:
+  # main
   opencloud:
-    labels: *x-labels
-  collabora:
-    labels: *x-labels
-  collaboration:
-    labels: *x-labels
+    labels: *x-labels-1
   radicale:
-    labels: *x-labels
+    labels: *x-labels-1
   tika:
-    labels: *x-labels
+    labels: *x-labels-1
+  # aux
+  collabora:
+    labels: *x-labels-2
+  collaboration:
+    labels: *x-labels-2
