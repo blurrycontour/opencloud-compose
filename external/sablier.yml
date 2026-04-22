@@ -21,8 +21,8 @@ services:
     labels: *x-labels-1
   tika:
     labels: *x-labels-1
+  collaboration:
+    labels: *x-labels-1
   # aux
   collabora:
-    labels: *x-labels-2
-  collaboration:
     labels: *x-labels-2
