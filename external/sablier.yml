@@ -17,11 +17,9 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
-  radicale:
-    labels: *x-labels-1
+  # radicale:
+  #   labels: *x-labels-1
   tika:
-    labels: *x-labels-1
-  collaboration:
     labels: *x-labels-1
   # aux
   collabora:
