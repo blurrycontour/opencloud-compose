@@ -4,4 +4,7 @@ services:
   euro-office:
     ports:
       # expose the euro-office document server on all interfaces
-      - "0.0.0.0:9900:80"
+      - "0.0.0.0:7008:80"
+    labels:
+      - sablier.enable=true
+      - sablier.group=opencloud-aux
