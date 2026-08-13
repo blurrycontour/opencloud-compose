@@ -2,7 +2,7 @@
 services:
   opencloud:
     # renovate: depName=opencloudeu/opencloud-rolling
-    image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-7.3.0}
+    image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-7.4.0}
     # changelog: https://github.com/opencloud-eu/opencloud/tree/main/changelog
     # release notes: https://docs.opencloud.eu/opencloud_release_notes.html
     user: ${OC_CONTAINER_UID_GID:-1000:1000}
@@ -59,6 +59,7 @@ services:
     volumes:
       - ./config/opencloud/csp.yaml:/etc/opencloud/csp.yaml
       - ./config/opencloud/csp-override.yaml:/etc/opencloud/csp-override.yaml
+      - ./config/opencloud/apps.yaml:/etc/opencloud/apps.yaml
       - ./config/opencloud/banned-password-list.txt:/etc/opencloud/banned-password-list.txt
       # configure the .env file to use own paths instead of docker internal volumes
       - ${OC_CONFIG_DIR:-./opencloud-config}:/etc/opencloud
