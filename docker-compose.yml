@@ -2,7 +2,7 @@
 services:
   opencloud:
     # renovate: depName=opencloudeu/opencloud-rolling
-    image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-8.1.0}
+    image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-9.0.0}
     # changelog: https://github.com/opencloud-eu/opencloud/tree/main/changelog
     # release notes: https://docs.opencloud.eu/opencloud_release_notes.html
     user: ${OC_CONTAINER_UID_GID:-1000:1000}
@@ -54,6 +54,8 @@ services:
       OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS: "${OC_PASSWORD_POLICY_MIN_UPPERCASE_CHARACTERS:-1}"
       OC_PASSWORD_POLICY_MIN_DIGITS: "${OC_PASSWORD_POLICY_MIN_DIGITS:-1}"
       OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS: "${OC_PASSWORD_POLICY_MIN_SPECIAL_CHARACTERS:-1}"
+      # guest links
+      OC_ENABLE_GUEST_LINKS: "${OC_ENABLE_GUEST_LINKS:-false}"
       # default language for services/WebUI; defaults to English, language code (ISO 639-1, e.g. de, en, fr)
       OC_DEFAULT_LANGUAGE: ${DEFAULT_LANGUAGE}
     volumes:
